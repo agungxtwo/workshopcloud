@@ -34,7 +34,7 @@ docker network ls
 
 docker service create -d --replicas 1 --name db_server --network blog_network --mount type=volume,source=database_volume,destination=/data/db mydb
 
-docker service create -d --name app_Server --replicas 3 --network blog_network myapp
+docker service create -d --name app_server --replicas 3 --network blog_network myapp
 
 docker service ls
 
@@ -44,7 +44,7 @@ docker container exec -it contidmyapp /bin/bash
 
 $ ping db_server
 
-docker service create -d --name webserver --network blog_network --replicas 3 -p 8080:80 webserver
+docker service create -d --name webserver --network blog_network --replicas 3 -p 8080:80 mywebserver
 
 docker service ls
 
