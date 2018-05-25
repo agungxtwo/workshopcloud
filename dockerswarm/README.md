@@ -42,8 +42,6 @@ docker service ls
 
 docker container ls
 
-docker container exec -it contidmyapp /bin/bash
-
 docker service create -d --name webserver --network blog_network --replicas 3 -p 8080:80 mywebserver
 
 docker service ls
