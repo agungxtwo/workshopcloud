@@ -1,23 +1,5 @@
 # Workshop Cloud
 
-## AutoScaling
-
-$ kubectl run php-apache --image=k8s.gcr.io/hpa-example --requests=cpu=200m --expose --port=80
-
-$ kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
-
-$ kubectl get hpa
-
-Load testing
-$ kubectl run -i --tty load-generator --image=busybox /bin/sh
-
-Hit enter for command prompt
-
-$ while true; do wget -q -O- http://php-apache.default.svc.cluster.local; done
-
-$ kubectl get hpa
-
-
 # Project
 1. Membuat Apps/layanan bebas dengan container lebih dari 2, menerapkan docker swarm
 2. Membuat Apps/layanan bebas dengan container lebih dari 2, menerapkan kubernetes
