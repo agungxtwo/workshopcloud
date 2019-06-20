@@ -7,7 +7,9 @@
 
 ## AutoScaling
 Kemudian jalankan container dalam kubernetes dengan perintah:
+
 $ kubectl run php-apache --image=k8s.gcr.io/hpa-example --requests=cpu=200m --expose --port=80
+
 [output]
 service/php-apache created
 deployment.apps/php-apache created
@@ -19,6 +21,7 @@ $ kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
 $ kubectl get hpa
 
 ##Load testing
+
 $ kubectl run -i --tty load-generator --image=busybox /bin/sh
 
 Hit enter for command prompt
